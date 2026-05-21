@@ -12,6 +12,10 @@ class HomePage {
         cy.contains('Signup / Login').click()
     }
 
+    howerOnProduct(){
+        cy.contains()
+    }
+
 }
 
 export default HomePage
