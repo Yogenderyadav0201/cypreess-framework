@@ -26,10 +26,7 @@ describe('User Signup Flow', () => {
 
         signupPage.verifySignupVisible()
 
-        signupPage.enterSignupDetails(
-            userData.name,
-            userData.email
-        )
+        signupPage.enterSignupDetails(userData.name,userData.email)
 
         signupPage.clickSignupButton()
 
@@ -48,5 +45,8 @@ describe('User Signup Flow', () => {
         accountPage.deleteConfirmButton()
 
         homePage.verifyHomePageVisible()
+
+        homePage.countProduct()
+
     })
 })

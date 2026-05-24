@@ -8,6 +8,9 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     supportFile: "cypress/support/e2e.js",
+
+    blockHosts: ["*google-analytics.com", "*googlesyndication.com", "*googleadservices.com"],
+    setupNodeEvents(on, config) {},
   },
 
   component: {

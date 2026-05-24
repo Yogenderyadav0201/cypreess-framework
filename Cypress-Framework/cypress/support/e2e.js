@@ -9,3 +9,4 @@
 // beforeEach(() => {
 //   // runs before each test
 // });
+import '@cypress/xpath';
