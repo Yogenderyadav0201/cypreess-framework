@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    tools {
+        nodejs 'Node-Latest' // This automatically adds node and npm to the system PATH
+    }
 
     stages {
         stage('Checkout') {
@@ -10,7 +14,6 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                // Navigates into the subfolder where package.json lives
                 dir('Cypress-Framework') {
                     sh 'npm ci'
                 }
