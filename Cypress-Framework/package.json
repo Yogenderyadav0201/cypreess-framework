@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "cypress run",
+    "cy:chrome": "cypress run --browser chrome",
+    "report:merge": "mochawesome-merge reports/*.json > reports/output.json",
+    "report:generate": "marge reports/output.json -f report -o reports"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +17,9 @@
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
     "cypress": "^15.15.0",
-    "cypress-xpath": "^2.0.1"
+    "cypress-xpath": "^2.0.1",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
   }
 }
