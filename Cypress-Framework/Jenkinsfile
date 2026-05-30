@@ -1,31 +1,35 @@
 pipeline {
-
     agent any
-
+    
     stages {
-
         stage('Checkout') {
             steps {
                 checkout scm
+            }
         }
-        }
-
+        
         stage('Install Dependencies') {
             steps {
-                bat 'npm ci'
+                dir('Cypress-Framework') {
+                    sh 'npm install'
+                }
             }
         }
-
+        
         stage('Verify Cypress') {
             steps {
-                bat 'npx cypress verify'
+                dir('Cypress-Framework') {
+                    sh 'npx cypress verify'
+                }
             }
-             }
-
+        }
+        
         stage('Run Tests') {
             steps {
-                bat 'npx cypress run'
+                dir('Cypress-Framework') {
+                    sh 'npx cypress run'
+                }
             }
         }
-        }
+    }
 }
