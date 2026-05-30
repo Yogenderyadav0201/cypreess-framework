@@ -20,12 +20,12 @@ pipeline {
             steps {
                 bat 'npx cypress verify'
             }
-        }
+             }
 
         stage('Run Tests') {
             steps {
                 bat 'npx cypress run'
             }
         }
-    }
+        }
 }
