@@ -1,21 +1,22 @@
 pipeline {
     agent any
-    
+
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-        
+
         stage('Install Dependencies') {
             steps {
+                // Navigates into the subfolder where package.json lives
                 dir('Cypress-Framework') {
-                    sh 'npm install'
+                    sh 'npm ci'
                 }
             }
         }
-        
+
         stage('Verify Cypress') {
             steps {
                 dir('Cypress-Framework') {
@@ -23,7 +24,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Run Tests') {
             steps {
                 dir('Cypress-Framework') {
